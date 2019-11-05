@@ -13,7 +13,8 @@ app = Flask(__name__)
 def inicio():
 
     for item in os.listdir('static'):
-        os.remove(f'static/'+item)
+        if item != '__init__.py':
+            os.remove('static/'+item)
 
     return render_template('inicio.html')
 
@@ -27,7 +28,7 @@ def resposta():
     imagem.save(os.path.join("static/"+filename))
 
     plt.figure(1)
-    img = cv2.imread("static/"+imagem.filename)
+    img = cv2.imread('static/'+imagem.filename)
     grayscaled = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     retval, threshold = cv2.threshold(grayscaled, int(limite), 255, cv2.THRESH_BINARY)
     cv2.imwrite('static/threshold.jpeg', threshold)
