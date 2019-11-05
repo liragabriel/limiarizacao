@@ -22,4 +22,4 @@ Para executar com o Flask e fazer o processo com uma imagem real, segue abaixo o
 Após a instalação:
 
     Execute o arquivo com `python app.py` no terminal
-    Acesso com `http://localhost:5000/` no navegador
+    Acesse com `http://localhost:5000/` no navegador
